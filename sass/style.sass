@@ -4,7 +4,11 @@ $color-brown-dark: #a14f03
 $color-black: #000
 $color-white: #fff
 
-
+@mixin style-link($color)
+    display: inline-block
+    text-decoration: none
+    text-transform: uppercase    
+    color: $color
 
 @font-face
     font-family: 'rob'
@@ -80,11 +84,8 @@ body
         margin-bottom: 6rem
 .btn
     &:link, &:visited
-        display: inline-block
-        text-decoration: none
-        text-transform: uppercase
+        @include style-link($color-grey)
         padding: 1.5rem 4rem
-        color: $color-grey
         font-size: 2rem
         background-color: #fff
         border-radius: 5rem
