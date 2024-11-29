@@ -147,6 +147,24 @@ body {
   margin-bottom: 8rem;
 }
 
+.adventure-card {
+  padding: 2.6rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: transform 0.4s;
+}
+.adventure-card:hover {
+  transform: translateY(-1rem);
+}
+.adventure-card__icon {
+  display: inline-block;
+  font-size: 6.3rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, #a14f03 99.94%);
+  background-clip: text;
+  color: transparent;
+}
+
 .btn:link, .btn:visited {
   display: inline-block;
   text-decoration: none;
@@ -310,4 +328,16 @@ body {
 
 .section-about {
   padding-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.section-adventure {
+  padding-top: 21.6rem;
+  padding-bottom: 21.6rem;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../img/section-adventure.jpg") center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+}
+
+.section-tour {
+  padding: 8rem;
 }/*# sourceMappingURL=style.css.map */
