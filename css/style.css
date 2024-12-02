@@ -13,6 +13,8 @@ body {
 
 .container {
   background-color: #f7f7f7;
+  position: relative;
+  z-index: 0;
 }
 
 @keyframes BtnToUp {
@@ -110,8 +112,11 @@ body {
   color: transparent;
   transition: all 0.4s;
 }
+.title-secondary_white {
+  color: white;
+}
 .title-secondary:hover {
-  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  transform: scale(1.1);
 }
 
 .title-third {
@@ -163,6 +168,26 @@ body {
   background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, #a14f03 99.94%);
   background-clip: text;
   color: transparent;
+}
+
+.bg-video {
+  position: absolute;
+  z-index: -20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-gradient {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
 }
 
 .btn:link, .btn:visited {
@@ -260,6 +285,162 @@ body {
   transform: scale(0.95);
 }
 
+.feedBack-card {
+  width: 75%;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0 auto;
+  padding: 6rem 18rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  transform: translateX(-3%);
+}
+.feedBack-card__img {
+  position: relative;
+  margin-right: 4rem;
+  float: left;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  shape-outside: circle(50% at 50% 50%);
+  overflow: hidden;
+}
+.feedBack-card__img img {
+  height: 100%;
+  transform: scale(1.2);
+  transition: all 0.7s;
+}
+.feedBack-card__name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 2.2rem;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: all 0.7s;
+}
+.feedBack-card:hover .feedBack-card__name {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.feedBack-card:hover img {
+  transform: scale(1);
+  filter: blur(0.3rem) brightness(80%);
+}
+
+.card-tour {
+  height: 50rem;
+  perspective: 200rem;
+  position: relative;
+}
+.card-tour__side {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 50rem;
+  width: 100%;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+.card-tour__side_front {
+  background-color: white;
+}
+.card-tour__side_back {
+  background: linear-gradient(135deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  transform: rotateY(180deg);
+}
+.card-tour:hover .card-tour__side_front {
+  transform: rotateY(-180deg);
+}
+.card-tour:hover .card-tour__side_back {
+  transform: rotateY(0deg);
+}
+.card-tour__img {
+  background-blend-mode: hard-light;
+  height: 21rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  margin-bottom: 4.5rem;
+}
+.card-tour__img_1 {
+  background: #ba8554 url("../img/tour-1.jpg") center/cover;
+}
+.card-tour__img_2 {
+  background: #ba8554 url("../img/tour-2.jpg") center/cover;
+}
+.card-tour__img_3 {
+  background: #ba8554 url("../img/tour-3.jpg") center/cover;
+}
+.card-tour__title {
+  position: absolute;
+  top: 17.7rem;
+  right: 0;
+  color: white;
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+}
+.card-tour__span {
+  padding: 1rem 2rem;
+  background: linear-gradient(120deg, rgb(186, 133, 84) 0.03%, #a14f03);
+}
+.card-tour__span_1 {
+  padding-bottom: 0.4rem;
+}
+.card-tour__span_2 {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+}
+.card-tour__descr ul {
+  text-align: center;
+}
+.card-tour__descr ul li {
+  display: inline-block;
+  position: relative;
+  font-size: 1.6rem;
+}
+.card-tour__descr ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.card-tour__descr ul li::after {
+  display: inline;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #777777;
+}
+.card-tour__backSide-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-tour__text {
+  margin-bottom: 8.7rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+.card-tour__text_1 {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.card-tour__text_2 {
+  font-weight: 500;
+  font-size: 6rem;
+}
+
 [class^=col-] {
   float: left;
 }
@@ -334,10 +515,17 @@ body {
 .section-adventure {
   padding-top: 21.6rem;
   padding-bottom: 21.6rem;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url("../img/section-adventure.jpg") center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%), url("../img/section-adventure.jpg") center/cover no-repeat;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
 }
 
 .section-tour {
   padding: 8rem;
+  margin-bottom: 8rem;
+}
+
+.section-feedBack {
+  margin-top: 8rem;
+  position: relative;
+  padding: 8rem 0;
 }/*# sourceMappingURL=style.css.map */
